@@ -1,22 +1,21 @@
 import java.util.Arrays;
 import java.util.Collections;
+
 public class Main {
 
-    public static void PalindromsChecker(String someString){
-        someString = someString.replaceAll("\\s+","" ).toLowerCase();
-        StringBuilder stringBuilder = new StringBuilder();
-        for (int i=someString.length()-1;i>=0;i--) {
-            stringBuilder.append(someString.charAt(i));
+    public static int NumbersInsideStringCalculator(String someString){
+        char[] tempCharsArray = someString.toCharArray();
+        int counter = 0;
+        for (char tempChar: tempCharsArray) {
+            if (Character.isDigit(tempChar)){
+                counter += tempChar - '0';
+            }
+            else continue;
         }
-        if (someString.equals(stringBuilder.toString())){
-            System.out.println("Podany ciąg znaków jest palindromem!");
-        } else{
-            System.out.println("Podany ciąg znaków NIE jest palindromem.");
-        }
+        return counter;
     }
     public static void main(String[] args)
     {
-        PalindromsChecker("kajak");
-        PalindromsChecker("Ada bzy zbada");
+        System.out.println(NumbersInsideStringCalculator("Ala ma 2 koty i 8 psów, a Dawid ma 20 psów."));
     }
 }
