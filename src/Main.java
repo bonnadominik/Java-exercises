@@ -1,13 +1,13 @@
 import java.util.Arrays;
 import java.util.Collections;
-import java.awt.*;
 
 public class Main {
     public static void main(String[] args)
     {
-        Camera myCamera = new Camera();
-        MeasuringArea myArea = new MeasuringArea();
-
-        System.out.println(myCamera.TakePictures());
+        FirstClass firstElement = new FirstClass(); //default construtor
+        SecondClass secondElement = new SecondClass(421, 422); //constructor with 2 parameters
+        SecondClass thirdElement = new SecondClass(); //custom constructor without parameters
+        ThirdClass fourthElement = new ThirdClass(", a to jest drugi konstruktor");
+        StaticBlocks fifthElement = new StaticBlocks();
     }
 }
